@@ -5,6 +5,7 @@ import com.mongodb.ReadPreference;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import webapp.client.Checkpoint;
 import webapp.data.Message;
 import webapp.util.SendEmail;
 
@@ -45,6 +46,12 @@ public class MainServer {
      * @throws IOException the io exception
      */
     public static void main(String[] args) throws IOException {
+        // Run a client application if need
+        if (args.length > 0 && args[0].equals("-client")) {
+            Checkpoint.main(null);
+            return;
+        }
+
         // Create ServerSocket
         ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
 
