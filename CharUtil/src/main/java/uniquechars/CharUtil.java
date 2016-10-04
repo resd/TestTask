@@ -74,4 +74,11 @@ public class CharUtil {
         return uniqueCharsString.toString();
     }
 
+    public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println("Unique chars of string: \"" + arg + "\" are: \n"
+                    + getUniqueCharsOfString(arg));
+        }
+    }
+
 }
